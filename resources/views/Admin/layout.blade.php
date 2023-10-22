@@ -1,5 +1,9 @@
 @include('Admin.inc.header')
 
-@yield('content')
+<div class="container m-5 p-5">
+
+    @yield('content')
+
+</div>
 
 @include('Admin.inc.footer')

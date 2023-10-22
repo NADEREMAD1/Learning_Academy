@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\admin\AdminController;
 use App\Http\Controllers\admin\AuthController;
+use App\Http\Controllers\admin\CatController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\HomepageController;
 use App\Http\Controllers\Front\CourseController;
@@ -53,15 +54,22 @@ Route::controller(AdminController::class)->group(function () {
 
 // Auth Controller
     Route::controller(AuthController::class)->prefix('dashboard')->group(function () {
-        // 
+        //
         Route::get('/login', 'login')->name('admin.login');
 
         Route::post('/dashboard/do-login', 'doLogin')->name('admin.doLogin');
 
-        Route::get('/', 'index')->name('admin.home')->middleware(['adminAuth','admin']);
+        Route::get('/', 'index')->name('admin.home'); //->middleware(['adminAuth','admin']);
 
-    Route::get('/dashboard/logout', 'logout')->name('admin.logout')->middleware(['adminAuth','admin']);
+        Route::get('/dashboard/logout', 'logout')->name('admin.logout')->middleware(['adminAuth','admin']);
+    });
 
-});
+    Route::controller(CatController::class)->prefix('dashboard')->group(function () {
 
+        // Route::middleware(['adminAuth','admin'])->group(function(){
+
+            Route::get('/cats', 'index')->name('admin.cat.index');
+            // });
+
+        });
 

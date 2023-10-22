@@ -33,7 +33,6 @@ class AuthController extends Controller
         return redirect()->route('admin.home');
     }
 }
-
 // logout from admin panel
     public function logout(){
         auth()-> guard('admin')->logout();
