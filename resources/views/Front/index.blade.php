@@ -145,14 +145,11 @@
 
                     <div class="col-sm-6 col-lg-4">
                         <div class="single_special_cource">
-                            <img src="{{asset('uplods/corses/' . $c->img ) }} " class="special_img" alt="">
+                            <img src="{{asset('uplods/corses/' . $c->img) }} " class="special_img" alt="">
                             <div class="special_cource_text">
-
                                 <a href="{{Route('front.cat',$c->cat->id)}}" class="btn_4">{{$c->cat->name}}</a>
                                 <h4>${{$c->price}}</h4>
-
                                 <a href="{{Route('front.show',[$c->cat->id,$c->id])}}"><h3>{{$c->name}}</h3></a>
-                                
                                 {{-- Araay هحطها ف  param لو عايز ابعت اكتر من  --}}
                                 <p>{{$c->small_desc}}</p>
                                 <div class="author_info">

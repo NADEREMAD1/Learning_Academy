@@ -61,11 +61,10 @@
                                     <a class="dropdown-item" href="{{Route('front.cat',$cat->id)}}">{{$cat->name}}</a>
 
                                     @endforeach
-
                                     </div>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Contact</a>
+                                    <a class="nav-link" href="contact">Contact</a>
                                 </li>
                             </ul>
                         </div>

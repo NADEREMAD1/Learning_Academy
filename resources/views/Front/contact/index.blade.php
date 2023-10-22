@@ -35,10 +35,12 @@
             <div class="row">
                 <div class="col-12">
                     <h2 class="contact-title">Get in Touch</h2>
+                              {{-- includ Error --}}
+                              @include('./front/inc/errors')
                 </div>
                 <div class="col-lg-8">
-                    <form class="form-contact contact_form" action="contact_process.php" method="post" id="contactForm"
-                        novalidate="novalidate">
+                    <form class="form-contact contact_form" method="post" action="{{route('front.message.contact')}}" id="contactForm">
+                        @csrf
                         <div class="row">
                             <div class="col-12">
                                 <div class="form-group">
@@ -53,7 +55,7 @@
                                         onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter your name'"
                                         placeholder = 'Enter your name'>
                                 </div>
-                            </div>
+                            </div>w
                             <div class="col-sm-6">
                                 <div class="form-group">
                                     <input class="form-control" name="email" id="email" type="email"
@@ -73,6 +75,8 @@
                             <button type="submit" class="button button-contactForm btn_1">Send Message</button>
                         </div>
                     </form>
+
+
                 </div>
                 <div class="col-lg-4">
                     <div class="media contact-info">
