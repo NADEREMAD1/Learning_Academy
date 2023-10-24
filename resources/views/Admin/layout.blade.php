@@ -1,6 +1,6 @@
 @include('Admin.inc.header')
 
-<div class="container m-5 p-5">
+<div class="container-fluid mt-3 ">
 
     @yield('content')
 

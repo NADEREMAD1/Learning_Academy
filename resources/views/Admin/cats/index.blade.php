@@ -3,7 +3,7 @@
 
 <div class="d-flex justify-content-between p-5">
     <h5>Categories</h5>
-<button class="btn btn-sm btn-primary">Add New</button>
+    <a class="btn btn-sm btn-primary" href="{{route('admin.cats.create')}}">Add New</a>
 </div>
 
 <table class="table table-dark">
@@ -15,13 +15,15 @@
       </tr>
     </thead>
     <tbody>
-@foreach ( $cat as $cats)
+@foreach ( $cat as $cat )
       <tr>
         <th scope="row">{{ $loop->iteration }}</th>
-        <td>{{$cats->name}}</td>
+        <td>{{$cat->name}}</td>
         <td>
-            <button class="btn btn-sm btn-info">Edit</button>
-            <button class="btn btn-sm btn-danger">Delete</button>
+
+            <a href="{{ route('admin.cats.edit',$cat->id) }}" class="btn btn-sm btn-info">Edit</a>
+
+            <a href="{{ route('admin.cats.delete',$cat->id) }}" class="btn btn-sm btn-danger">Delete</a>
         </td>
       </tr>
 @endforeach

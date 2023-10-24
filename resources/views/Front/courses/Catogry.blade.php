@@ -40,7 +40,7 @@
                                 <h4>${{$c->price}}</h4>
 
                                 <a href="{{Route('front.show',[$c->cat->id,$c->id])}}"><h3>{{$c->name}}</h3></a>
-                                
+
                                 {{-- Araay هحطها ف  param لو عايز ابعت اكتر من  --}}
                                 <p>{{$c->small_desc}}</p>
                                 <div class="author_info">
@@ -70,7 +70,7 @@
 
                 @endforeach
                 {{-- create paginate لم عدد الكورسات يبق اكتر من 6 هيعمل زي اسكرول كده لباقي الكورسات --}}
-                
+
                 <div class="d-flex justify-content-center w-100 mb-5">
                     <ul class="pagination">
                         @if ($courses->currentPage() > 1)
@@ -86,7 +86,7 @@
                                 <a class="page-link" href="{{ $courses->url($i) }}">{{ $i }}</a>
                             </li>
                         @endfor
-                
+
                         @if ($courses->hasMorePages())
                             <li class="page-item">
                                 <a class="page-link" href="{{ $courses->nextPageUrl() }}" aria-label="Next">
@@ -96,7 +96,7 @@
                         @endif
                     </ul>
                 </div>
-                
+
                 </div>
             </div>
         </section>

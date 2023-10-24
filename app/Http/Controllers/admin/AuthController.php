@@ -16,6 +16,7 @@ class AuthController extends Controller
         public function index(){
             return view('Admin.index');
     }
+// ====================================================================================================================
 
     // Athu From Admin
    public function doLogin(Request $request){
@@ -24,14 +25,16 @@ class AuthController extends Controller
         'password' => 'required|string',
     ]);
 
-    if (!auth()->guard('admin')->attempt(['email' => $data['email'], 'password' => $data['password']])) {
+    if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
         // Authentication successful, redirect to admin home
-        return back()->with('error', 'Invalid email or password.');
-    }
-    else {
-        // Authentication failed, redirect back with an error message
         return redirect()->route('admin.home');
     }
+
+    else {
+        // Authentication failed, redirect back with an error message
+        return back()->with('error', 'Invalid email or password.');
+    }
+
 }
 // logout from admin panel
     public function logout(){
@@ -39,4 +42,7 @@ class AuthController extends Controller
         //logout() => بتاخد البيانات كلها بتاعت المستخدم تحفها وترجعنا علي صفحة ال لوج ان تاني
         return redirect(route('admin.login'));
     }
+
+
+
 }
