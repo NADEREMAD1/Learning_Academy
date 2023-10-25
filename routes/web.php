@@ -141,3 +141,33 @@ Route::controller(TrainerController::class)->prefix('dashboard')->group(function
             // });
 
     });
+
+    //  Start Courses Route
+
+    Route::controller(StudentsController::class)->prefix('dashboard')->group(function () {
+
+        // Route::middleware(['adminAuth','admin'])->group(function(){
+
+             // select courses info
+            Route::get('/students', 'index')->name('admin.students.index');
+
+            // Start Table Show Trainer
+            Route::get('/students/create', 'create')->name('admin.students.create');
+
+           // create trainers
+            Route::post('/students/store', 'store')->name('admin.students.store');
+
+            // edit trainers
+            Route::get('/students/edit/{id}', 'edit')->name('admin.students.edit');
+
+            // update trainers
+            Route::post('/students/update', 'update')->name('admin.students.update');
+
+            // delete trainers
+            Route::get('/students/delete/{id}', 'delete')->name('admin.students.delete');
+            // showCourses
+            Route::get('/students/show-Courses/{id}', 'showCourses')->name('admin.students.showCourses');
+
+            // });
+
+    });

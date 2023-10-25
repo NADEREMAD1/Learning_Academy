@@ -48,26 +48,37 @@ class MessagesController extends Controller
             'course_id' =>'required|string|exists:courses,id',
             // exists:courses,id' => id موجود ف جدول الكورس ف عمود ال
         ]);
-       $student = Student::create([
-            'name'=>$data['name'],
-            'email'=>$data['email'],
-            'spec'=>$data['spec'],
-       ]);
+    $old_students = Student::Select('id')->where('email',$data['email'])->first();
+        if($old_students == null){
+            $student = Student::create([
+                'name'=>$data['name'],
+                'email'=>$data['email'],
+                'spec'=>$data['spec'],
+           ]);
 
-       $student_id = $student->id;
+          $student_id = $student->id;
+        }
+        else {
+            $student_id= $old_students->id ;
+
+            if ($data['name'] !== null) {
+
+                $old_students->update(['name' => $data['name']]);
+            }
+
+            if ($data['spec'] !== null) {
+
+                $old_students->update(['spec' => $data['spec']]);
+            }
+
+        }
         DB::table('course_student')->insert([
-
             'course_id' =>$data['course_id'],
             'student_id' =>$student_id,
-
             'created_at'=>now(),
             'updated_at'=>now(),
+
             ]);
-
-
         return back();
-
     }
-
-
 }

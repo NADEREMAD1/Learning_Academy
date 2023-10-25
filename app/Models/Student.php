@@ -8,12 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Student extends Model
 {
     use HasFactory;
-    protected $guarded = ['id'];
 
+        protected $table = 'students';
 
+      protected $guarded = ['id'];
 
-    public function Courses(){
-        return $this->belongsToMany(Courses::class);
+    public function courses()
+{
+    return $this->belongsToMany(Courses::class);
          // student hasMany Courses كل 'طالب' يمكن أن يكون له العديد من الكورسات.
-    }
+
+}
+
 }
