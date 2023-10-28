@@ -22,7 +22,6 @@ return new class extends Migration
              $table->unsignedBigInteger('student_id'); // معرف الطالب المشترك في الدورة
              $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade'); // يرتبط بجدول الطلاب
 
-
              $table->enum('status', ['pending', 'approve', 'reject'])->default('pending')->change();  // حقل يحتوي على قيم محددة (الموافقة أو الرفض)
 
              $table->timestamps();

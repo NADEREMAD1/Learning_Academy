@@ -75,14 +75,13 @@ public function store(Request $request){
      return back();
   }
 
-
 public function showCourses($id) {
     $courses = DB::table('courses')
         ->join('course_student', 'courses.id', '=', 'course_student.course_id')
         ->where('course_student.student_id', $id)
         ->select('courses.id', 'courses.name', 'course_student.status as status')
-
         ->get();
+
 
     return view('admin.students.showCourses', ['courses' => $courses, 'student_id' => $id]);
 }

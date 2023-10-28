@@ -2,13 +2,14 @@
 @include('Admin.inc.nav')
 
 @section('content')
+<div class="container p-5 vh-100">
     <div class="d-flex justify-content-between p-5 ">
-        <h5>Students / Show Courses</h5>
+        <h5 class="text-dark">S<span class="text-danger">T</span>U<span class="text-danger">D</span>E</span><span class="text-danger">N</span>T  / Show Courses</h5>
         <a class="btn btn-sm btn-info" href="{{ route('admin.students.addToCourse',$student_id) }}">Add To Course</a>
         <a class="btn btn-sm btn-primary" href="{{ route('admin.students.index') }}">BACK</a>
     </div>
-    <table class="table border border-dark border-border  w-100 container">
-        <thead class="table-dark">
+    <table class="table w-100 container text-white">
+        <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Name</th>

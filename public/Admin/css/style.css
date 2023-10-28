@@ -5,7 +5,13 @@
     --light: #6C7293;
     --dark: #000000;
 }
-
+*{
+margin: 0;
+padding: 0;
+}
+.navbar-dark{
+    margin-top: -25px;
+}
 .back-to-top {
     position: fixed;
     display: none;
@@ -78,13 +84,22 @@
 
 .content {
     margin-left: 250px;
-    min-height: 100vh;
+    /* min-height: 100vh; */
     /* background:var(--dark); */
-    background:#909090;
+    background:#F7F9F9;
     transition: 0.5s;
 }
 label{
-    color: darkblue !important;
+    color: #000000 !important;
+}
+table{
+    background-color:#191C24 !important;
+    color: red;
+
+}
+thead{
+    background-color: #641E16;
+    color: white;
 }
 @media (min-width: 992px) {
     .sidebar {

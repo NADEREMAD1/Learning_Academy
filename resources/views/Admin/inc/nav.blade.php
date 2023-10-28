@@ -33,8 +33,8 @@
 
 </head>
 
-<body>
-    <div class="container-fluid position-relative d-flex p-0">
+<body class="bg-danger">
+    <div class="container-fluid position-relative d-flex">
          <!-- Spinner Start -->
         <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
@@ -47,7 +47,7 @@
         <div class="sidebar pe-4 pb-3">
             <nav class="navbar bg-secondary navbar-dark">
                 <a href="index.php" class="navbar-brand mx-4 mb-3">
-                    <h3 class="text-primary"><i class="fa fa-user-edit me-2"></i>KLAZA</h3>
+                    <h3 class="text-primary"><i class="fa fa-user-edit me-2 pt-4"></i>KLAZA</h3>
                 </a>
                 <div class="d-flex align-items-center ms-4 mb-4">
                     <div class="position-relative">
@@ -63,23 +63,24 @@
                     <a href="{{route('admin.home')}}" class="nav-item nav-link active mb-1"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
                     <a href="{{route('admin.cats.index')}}" class="nav-item nav-link d-flex">
                         <span  class="w-75">CATOGRIES</span>
-                        <span class="w-25"><i class="fas fa-lock-open text-info"></i></span>
+                        <span class="w-25" dir="rtl"><i class="fab fa-leanpub"></i></span>
                          </a>
                     <a href="{{route('admin.trainers.index')}}" class="nav-item nav-link d-flex">
                         <span  class="w-75">TRAINER </span>
-                        <span class="w-25"><i class="fas fa-lock-open text-info"></i></span>
+                        <span class="w-25" dir="rtl"><i class="fas fa-user-shield"></i></span>
                          </a>
                     <a href="{{route('admin.students.index')}}" class="nav-item nav-link d-flex">
                         <span  class="w-75">STUDENT </span>
-                        <span class="w-25"><i class="fas fa-lock-open text-info"></i></span>
-                         </a>
+                        <span class="w-25" dir="rtl"><i class="fas fa-user-graduate"></i></span>
+                    </a>
                     <a href="{{route('admin.courses.index')}}" class="nav-item nav-link d-flex">
                         <span  class="w-75">COURSES </span>
-                        <span class="w-25"><i class="fas fa-lock-open text-info"></i></span>
+                        <span class="w-25" dir="rtl"><i class="fas fa-book"></i></span>
                          </a>
                               </div>
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">
+                            <i class="fas fa-lock-open me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
                             <a href="signup.php" class="dropdown-item">Sign Up</a>
                         </div>

@@ -24,22 +24,14 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="{{asset("admin/lib/chart/chart.min.js")}}" rel="stylesheet"></script>
-{{-- <script src="lib/chart/chart.min.js"></sc> --}}
 <script src="{{asset("admin/lib/easing/easing.min.js")}}" rel="stylesheet"></script>
-{{-- <script src="lib/easing/easing.min.js"></sc> --}}
 <script src="{{asset("admin/lib/waypoints/waypoints.min.js")}}" rel="stylesheet"></script>
-{{-- <script src="lib/waypoints/waypoints.min.js"></sc> --}}
 <script src="{{asset("admin/lib/owlcarousel/owl.carousel.min.js")}}" rel="stylesheet"></script>
-{{-- <script src="lib/owlcarousel/owl.carousel.min.js"></sc> --}}
 <script src="{{asset("admin/lib/tempusdominus/js/moment.min.js")}}" rel="stylesheet"></script>
-{{-- <script src="lib/tempusdominus/js/moment.min.js"></sc> --}}
 <script src="{{asset("admin/lib/tempusdominus/js/moment-timezone.min.js")}}" rel="stylesheet"></script>
-{{-- <script src="lib/tempusdominus/js/moment-timezone.min.js"></sc> --}}
 <script src="{{asset("admin/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js")}}" rel="stylesheet"></script>
-{{-- <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></sc> --}}
 
 <!-- Template Javascript -->
-<script src="{{asset("admin/js/main.js")}}" rel="stylesheet"></script>
 <script src="{{asset("admin/js/main.js")}}" rel="stylesheet"></script>
 {{-- <script src="js/main.js"></sc> --}}
 </body>

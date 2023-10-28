@@ -5,13 +5,13 @@
 <div class="container mt-5 vh-100">
 
 <div class="d-flex justify-content-between mb-3">
-    <h6>categrouis / Edit / {{$cat->name}}</h6>
+    <h5 class="text-dark">C<span class="text-danger">A</span>T<span class="text-danger">E</span>G<span class="text-danger">R</span>I<span class="text-danger">E</span>S  / Edit / <span class="text-danger"> {{$cat->name}}</span></h5>
     <a href="{{ route('admin.cats.index') }}" class="btn btn-danger btn-sm">Back</a>
 </div>
 
     @include('admin.inc.errors')
 
-<form action="{{ route('admin.cats.update') }}" class="form-group " method="POST">
+<form action="{{ route('admin.cats.update') }}"  method="POST" class="form-control">
 
     @csrf
 
@@ -21,7 +21,7 @@
 
         <label for="exampleInputEmail1 text-danger">Name</label> <br>
 
-        <input type="text" name="name" class="   mb-3 mt-2 w-75" value="{{$cat->name}}">
+        <input type="text" name="name" class="form-control mb-3 mt-2 w-75 bg-white text-dark" value="{{$cat->name}}">
 
     </div>
 

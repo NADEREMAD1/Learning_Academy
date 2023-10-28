@@ -27,7 +27,7 @@
 
         @include('admin.inc.errors')
 
-    <form action="{{route('admin.doLogin')}}" method="POST">
+    <form action="{{route('admin.doLogin')}}" method="POST" class="form-control">
         @csrf
         <!-- Email input -->
             <div class="form-outline mb-4">

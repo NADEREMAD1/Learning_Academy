@@ -4,12 +4,12 @@
 @section('content')
 
 <div class="d-flex justify-content-between p-5">
-    <h5>courses</h5>
+    <h4 class="text-dark">C<span class="text-danger">O</span>U<span class="text-danger">R</span>S</span><span class="text-danger">E</span>S</h4>
     <a class="btn btn-sm btn-primary" href="{{route('admin.courses.create')}}">Add New</a>
 </div>
 
-<table class="table table-dark w-100">
-    <thead>
+<table class="table w-100 text-white" >
+    <thead class="">
       <tr>
         <th scope="col">#</th>
         <th scope="col">img</th>

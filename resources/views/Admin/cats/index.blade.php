@@ -5,11 +5,11 @@
 <div class="container vh-100">
 
 <div class="d-flex justify-content-between p-5">
-    <h5 class="text-dark">CATEGRIES</h5>
+    <h5 class="text-dark">C<span class="text-danger">A</span>T<span class="text-danger">E</span>G<span class="text-danger">R</span>I<span class="text-danger">E</span>S </h5>
     <a class="btn btn-sm btn-primary" href="{{route('admin.cats.create')}}">Add New</a>
 </div>
 
-<table class="table table-dark">
+<table class="table text-white">
     <thead>
       <tr>
         <th scope="col">#</th>
