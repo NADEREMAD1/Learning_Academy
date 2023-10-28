@@ -33,4 +33,10 @@ class Courses extends Model
              //Courses  hasMany student كل 'كورس' يمكن أن يكون له العديد من الطلاب.
         }
 
+//         public function students()
+// {
+//     return $this->belongsToMany(Student::class, 'course_student', 'course_id', 'student_id')
+//         ->withPivot('status'); // If you want to access the 'status' column in the pivot table.
+// }
+
 }

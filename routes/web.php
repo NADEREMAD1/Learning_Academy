@@ -54,17 +54,19 @@ Route::controller(AdminController::class)->group(function () {
 
     // Route::get('/dashboard', 'index')->name('admin.home')->middleware(['adminAuth','admin']);
 });
+
     // Auth Controller
 
     Route::controller(AuthController::class)->prefix('dashboard')->group(function () {
         //
-        Route::get('/', 'index')->name('admin.home')->middleware(['adminAuth','admin']);
+        Route::get('/', 'index')->name('admin.home');
 
         Route::get('/login', 'login')->name('admin.login');
 
         Route::post('/do-login', 'doLogin')->name('admin.doLogin');
 
-        Route::get('/dashboard/logout', 'logout')->name('admin.logout')->middleware(['adminAuth','admin']);
+        Route::get('/dashboard/logout', 'logout')->name('admin.logout');
+        // ->middleware(['adminAuth','admin'])
     });
 
     Route::controller(CatController::class)->prefix('dashboard')->group(function () {
@@ -167,6 +169,13 @@ Route::controller(TrainerController::class)->prefix('dashboard')->group(function
             Route::get('/students/delete/{id}', 'delete')->name('admin.students.delete');
             // showCourses
             Route::get('/students/show-Courses/{id}', 'showCourses')->name('admin.students.showCourses');
+            Route::get('/students/{id}/courses/{c_id}/approve', 'approveCourses')->name('admin.students.approveCourses');
+
+            Route::get('/students/{id}/courses/{c_id}/reject', 'rejectCourses')->name('admin.students.rejectCourses');
+
+            Route::get('/students/{id}/addToCourse', 'addToCourse')->name('admin.students.addToCourse');
+
+            Route::post('/students/{id}/addToCourse', 'storeCourse')->name('admin.students.storeCourse');
 
             // });
 

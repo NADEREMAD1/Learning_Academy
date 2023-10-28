@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Courses;
 use App\Models\Student;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\DB;
 
 class StudentsController extends Controller
 {
@@ -74,12 +75,47 @@ public function store(Request $request){
      return back();
   }
 
-  public function showCourses($id){
 
-    $data['course'] = Student::findOrFail($id)->corses;
+public function showCourses($id) {
+    $courses = DB::table('courses')
+        ->join('course_student', 'courses.id', '=', 'course_student.course_id')
+        ->where('course_student.student_id', $id)
+        ->select('courses.id', 'courses.name', 'course_student.status as status')
 
-    return view('admin.students.showCourses')->with($data);
+        ->get();
 
-  }
+    return view('admin.students.showCourses', ['courses' => $courses, 'student_id' => $id]);
+}
 
+public function approveCourses($id, $c_id) {
+    DB::table('course_student')->where('student_id', $id)->where('course_id', $c_id)->update([
+        'status' => 'approve', // استخدم 'approve' بدلاً من 'approved'
+    ]);
+    return back();
+}
+
+public function rejectCourses($id, $c_id) {
+    DB::table('course_student')->where('student_id', $id)->where('course_id', $c_id)->update([
+        'status' => 'reject', // استخدم 'reject' بدلاً من 'reject'
+    ]);
+    return back();
+}
+
+public function addToCourse($id){
+        $data['student_id'] = $id ;
+        $data['courses']= Courses::select('id','name')->get();
+    return view('admin.students.addToCourse')->with($data);
+}
+public function storeCourse($id,Request $request){
+    $data = $request->validate([
+        'course_id' => 'required|exists:courses,id',
+    ]);
+        DB::table('course_student')->insert([
+            'student_id'=> $id,
+            'course_id'=> $data['course_id'],
+
+            ]);
+    return redirect(route('admin.students.showCourses',$id));
+
+}
 }

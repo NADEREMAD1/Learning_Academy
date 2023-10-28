@@ -13,11 +13,14 @@ class Student extends Model
 
       protected $guarded = ['id'];
 
-    public function courses()
+//     public function courses()
+// {
+//     return $this->hasMany(Courses::class);
+//          // student hasMany Courses كل 'طالب' يمكن أن يكون له العديد من الكورسات.
+
+// }
+public function courses()
 {
     return $this->belongsToMany(Courses::class);
-         // student hasMany Courses كل 'طالب' يمكن أن يكون له العديد من الكورسات.
-
 }
-
 }

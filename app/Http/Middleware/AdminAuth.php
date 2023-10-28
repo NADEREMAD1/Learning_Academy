@@ -8,11 +8,14 @@ use Symfony\Component\HttpFoundation\Response;
 
 class AdminAuth
 {
-    public function handle(Request $request, Closure $next,$guard=null): Response
+    public function handle(Request $request, Closure $next,$guard='admin'): Response
     {
-       if(!auth()->guard($guard)->check() );
+       if(!auth()->guard($guard)->check() ){
+
+           return redirect(route('admin.login'));
+       }
         // check() => بتشوف هل اليوزر دلوقتي عامل لوج ان ولا لا
-        return redirect(route('admin.login'));
+
         return $next($request);
     }
 }

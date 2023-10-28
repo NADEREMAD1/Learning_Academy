@@ -12,6 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('course_student', function (Blueprint $table) {
+
             // course_student -> بياخد ال فورن كي من الكورس والفورن كي من الاستيودينت
             $table->id();
 
@@ -21,7 +22,9 @@ return new class extends Migration
              $table->unsignedBigInteger('student_id'); // معرف الطالب المشترك في الدورة
              $table->foreign('student_id')->references('id')->on('students')->onDelete('cascade'); // يرتبط بجدول الطلاب
 
-             $table->enum('status', ['pending','approve', 'reject'])->default('pending'); // حقل يحتوي على قيم محددة (الموافقة أو الرفض)
+
+             $table->enum('status', ['pending', 'approve', 'reject'])->default('pending')->change();  // حقل يحتوي على قيم محددة (الموافقة أو الرفض)
+
              $table->timestamps();
         });
     }
