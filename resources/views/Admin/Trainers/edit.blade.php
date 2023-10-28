@@ -1,5 +1,9 @@
 @extends('Admin.layout')
+@include('Admin.inc.nav')
+
 @section('content')
+
+<div class="container mt-3 p-5">
 
 <div class="d-flex justify-content-between mb-3">
     <h6>categrouis / Edit / {{$trainers->name}}</h6>
@@ -38,7 +42,7 @@
 
     </div>
 
-    <img src="{{asset('uplods/trainers/' . $trainers->img)}}" alt="">
+    <img src="{{asset('uplods/trainers/' . $trainers->img)}}" width="100px" alt="">
 
     <div class="form-group">
 
@@ -50,7 +54,7 @@
 
     <button class="btn btn-primary btn-sm " type="Submit">Submit</button>
 </form>
-
+</div>
 @endsection
 
 

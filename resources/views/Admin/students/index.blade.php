@@ -1,4 +1,6 @@
 @extends('Admin.layout')
+@include('Admin.inc.nav')
+
 @section('content')
 
 <div class="d-flex justify-content-between p-5 ">
@@ -6,8 +8,8 @@
     <a class="btn btn-sm btn-primary" href="{{route('admin.students.create')}}">Add New</a>
 </div>
 
-<table class="table border border-dark border-border  w-100 container">
-    <thead class="table-dark">
+<table class="table  border border-dark border-border">
+    <thead class="table-dark ">
       <tr>
         <th scope="col">#</th>
         <th scope="col">Name</th>
@@ -16,9 +18,9 @@
         <th scope="col">Acthions</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody class="table-secondary">
 @foreach ( $students as $s )
-            <tr>
+            <tr scope="row" >
                 <th scope="row">{{  $s->id }}</th>
                 <td>{{$s->name}}</td>
                 <td>{{$s->email}}</td>

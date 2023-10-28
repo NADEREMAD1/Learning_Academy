@@ -1,5 +1,9 @@
 @extends('Admin.layout')
+@include('Admin.inc.nav')
+
 @section('content')
+<div class="container mt-5 p-3">
+
     <div class="d-flex justify-content-between mb-3">
         <h6>Student / Edit / Add Course</h6>
 
@@ -30,4 +34,5 @@
 
         <button class="btn btn-primary btn-sm " type="Submit">Submit</button>
     </form>
+</div>
 @endsection

@@ -1,4 +1,6 @@
 @extends('Admin.layout')
+@include('Admin.inc.nav')
+
 @section('content')
     <div class="d-flex justify-content-between p-5 ">
         <h5>Students / Show Courses</h5>

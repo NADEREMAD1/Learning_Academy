@@ -1,5 +1,9 @@
 @extends('Admin.layout')
+@include('Admin.inc.nav')
+
 @section('content')
+<div class="container mt-5">
+
     <div class="d-flex justify-content-between mb-3">
         <h6>Trainers / Add New</h6>
         <a href="{{ route('admin.trainers.index') }}" class="btn btn-danger btn-sm">Back</a>
@@ -34,9 +38,10 @@
 
             <label for="img">img</label>
 
-            <input type="file" name="img" class="form-control mb-2" id="img">
+            <input type="file" name="img" class="form-control mb-2 text-dark" id="img">
         </div>
         <button class="btn btn-primary btn-sm " type="Submit">Submit</button>
     </form>
+</div>
 @endsection
 

@@ -1,9 +1,8 @@
-@include('Admin.inc.header')
 
-<div class="container-fluid mt-3 ">
+<div class="container ">
 
     @yield('content')
 
 </div>
 
-@include('Admin.inc.footer')
+@include('Admin.inc.foot')

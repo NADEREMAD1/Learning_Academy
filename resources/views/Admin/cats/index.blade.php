@@ -1,8 +1,11 @@
 @extends('Admin.layout')
+@include('Admin.inc.nav')
+
 @section('content')
+<div class="container vh-100">
 
 <div class="d-flex justify-content-between p-5">
-    <h5>Categories</h5>
+    <h5 class="text-dark">CATEGRIES</h5>
     <a class="btn btn-sm btn-primary" href="{{route('admin.cats.create')}}">Add New</a>
 </div>
 
@@ -30,5 +33,7 @@
 
     </tbody>
   </table>
+
+</div>
 @endsection
 
