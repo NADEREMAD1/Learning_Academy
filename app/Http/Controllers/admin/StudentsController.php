@@ -64,9 +64,9 @@ public function store(Request $request){
         'spec' => 'required|string',
       ]);
 
-      Student::findOrFail( $request->id)->update($data);
+      Student::findOrFail($request->id)->update($data);
 
-      return redirect(route('Admin.students.index'));
+      return redirect(route('admin.students.index'));
   }
 
   public function delete($id)

@@ -28,14 +28,14 @@
 
         <div class="form-group">
 
-            <label for="exampleInputEmail1">small_desc</label>
+            <label for="exampleInputEmail1">email</label>
 
-            <input type="text" name="small_desc" class="form-control mb-2 bg-white text-dark" value="{{ $students->email }}">
+            <input type="text" name="email" class="form-control mb-2 bg-white text-dark" value="{{ $students->email }}">
         </div>
         <div class="form-group">
 
-            <label for="desc">desc</label>
-            <textarea name="desc" id="" class="form-control mb-2 bg-white text-dark" cols="30" rows="10" >{{ $students->spec }}</textarea>
+            <label for="spec">spec</label>
+            <textarea name="spec" id="spec" class="form-control mb-2 bg-white text-dark" cols="30" rows="10" >{{ $students->spec }}</textarea>
         </div>
         <button class="btn btn-primary btn-sm " type="Submit">Submit</button>
     </form>
