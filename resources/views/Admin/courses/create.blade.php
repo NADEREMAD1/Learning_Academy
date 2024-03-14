@@ -33,7 +33,7 @@
           <label class="input-group" for="inputGroupSelect02">Select Your  Trainer </label>
           <div class="input-group mb-3">
             <label class="input-group-text text-danger" for="inputGroupSelect02">Options</label>
-            <select class="form-select bg-white text-dark" id="inputGroupSelect02" name="cat_id">
+            <select class="form-select bg-white text-dark" id="inputGroupSelect02" name="trainer_id">
                 <option selected>Choose...</option>
                 @foreach ( $trainer as $tr )
                 <option value="{{$tr->id}}">{{$tr->name}}</option>

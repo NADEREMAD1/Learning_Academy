@@ -23,6 +23,7 @@ class AuthController extends Controller
 public function register(Request $request){
     //validate request data
     $val = Validator::make($request->all(),[
+        'username' => 'required|string|max:191',
         'email' => 'required|email|max:191',
         'password' => 'required|string',
     ]);
@@ -46,7 +47,7 @@ public function register(Request $request){
 }
 
     // Athu From Admin
-   public function doLogin(Request $request){
+   public function do_Login(Request $request){
     $data = $request->validate([
         'email' => 'required|email|max:191',
         'password' => 'required|string',
@@ -54,20 +55,33 @@ public function register(Request $request){
 
     if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password])) {
         // Authentication successful, redirect to admin home
-        return redirect()->route('admin.home');
-    // return "true";
+        // return redirect()->route('admin.home');
+    return "true";
     }
 
     else {
         // Authentication failed, redirect back with an error message
-        return back()->with('error', 'Invalid email or password.');
-        // return "false";
+        // return back()->with('error', 'Invalid email or password.');
+        return "false";
     }
 }
 // logout from admin panel
-    public function logout(){
-        auth()-> guard('admin')->logout();
-        //logout() => بتاخد البيانات كلها بتاعت المستخدم تحفها وترجعنا علي صفحة ال لوج ان تاني
-        return redirect(route('admin.login'));
+
+    // public function logout(){
+    //     // auth()->guard('admin')->logout();
+    //     //logout() => بتاخد البيانات كلها بتاعت المستخدم تحفها وترجعنا علي صفحة ال لوج ان تاني
+    //     // return redirect(route('admin.login'));
+
+    //     auth('sanctum')->guard('admin')->tokens()->delete();
+
+    //     return 'Don';
+    // }
+
+    public function Logout(){
+
+        // auth()->guard('admin')->tokens()->Logout();
+        auth('sanctum')->guard('admin')->logout();
+            // return 'Don';
     }
+
 }

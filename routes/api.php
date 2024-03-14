@@ -9,5 +9,11 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::controller(AuthController::class)->group(function(){
-    Route::post('r_teacher','register');
+
+    Route::post('register','register');
+
+    Route::post('klaza','do_Login');
+
+    Route::post('Logout','Logout');
+
 });

@@ -12,6 +12,24 @@ use App\Http\Controllers\admin\StudentsController;
 use App\Http\Controllers\admin\TrainerController;
 use Illuminate\Support\Facades\Route;
 
+
+    // Auth Controller
+
+    Route::controller(AuthController::class)->prefix('dashboard')->group(function () {
+
+        Route::get('/', 'index')->name('admin.home');
+        // ->middleware('adminAuth')
+
+        Route::post('r_teacher','register')->name('admin.register');
+
+        Route::get('/login', 'login')->name('admin.login');
+
+        Route::post('/do-login', 'do_Login')->name('admin.doLogin');
+
+        Route::get('/logout', 'logout')->name('admin.logout');
+    });
+
+
 // HomepageController group
 
 Route::controller(HomepageController::class)->group(function () {
@@ -54,20 +72,6 @@ Route::controller(AdminController::class)->group(function () {
 
     // Route::get('/dashboard', 'index')->name('admin.home')->middleware(['adminAuth','admin']);
 });
-
-    // Auth Controller
-
-    Route::controller(AuthController::class)->prefix('dashboard')->group(function () {
-        //
-        Route::get('/', 'index')->name('admin.home');
-
-        Route::get('/login', 'login')->name('admin.login');
-
-        Route::post('/do-login', 'doLogin')->name('admin.doLogin');
-
-        Route::get('/dashboard/logout', 'logout')->name('admin.logout');
-        // ->middleware(['adminAuth','admin'])
-    });
 
     Route::controller(CatController::class)->prefix('dashboard')->group(function () {
 
